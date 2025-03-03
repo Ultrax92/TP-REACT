@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <small>Copyright Mexican Food 2024</small>
+            <p>Copyright Mexican Food 2024</p>
         </footer>
     );
 }
