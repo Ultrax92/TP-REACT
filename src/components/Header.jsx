@@ -1,4 +1,4 @@
-const Header = () => {
+function Header() {
     return (
         <header>
             <img
@@ -11,16 +11,10 @@ const Header = () => {
                     <li>
                         <a href="/">Home</a>
                     </li>
-                    <li>
-                        <a href="/about">À propos</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
                 </ul>
             </nav>
         </header>
     );
-};
+}
 
 export default Header;
