@@ -3,7 +3,7 @@ import "../assets/styles/footer.scss";
 function Footer() {
   return (
     <footer>
-      <p>Copyright Mexican Food 2024</p>
+      <p><small>Copyright Mexican Food 2024</small></p>
     </footer>
   );
 }
