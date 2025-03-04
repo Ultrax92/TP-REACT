@@ -6,16 +6,7 @@ function Dish({ name, price, imgSrc, isNew }) {
     <Card>
       <div style={{ position: "relative" }}>
         {isNew && (
-          <Badge
-            pill
-            variant="success"
-            style={{
-              position: "absolute",
-              top: "10px",
-              right: "10px",
-              zIndex: 10,
-            }}
-          >
+          <Badge pill variant="success">
             Nouveau
           </Badge>
         )}
