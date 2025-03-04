@@ -11,6 +11,7 @@ function Header() {
         <Navbar.Brand href="/">
           <img alt="Logo App" src={Logo} />
         </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse className="justify-content-end">
           <Nav>
             <Nav.Link href="/">Accueil</Nav.Link>

@@ -4,7 +4,7 @@ import "../assets/styles/dish.scss";
 function Dish({ name, price, imgSrc, isNew }) {
   return (
     <Card>
-      <div style={{ position: "relative" }}>
+      <div>
         {isNew && (
           <Badge pill variant="success">
             Nouveau
