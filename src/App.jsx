@@ -3,6 +3,7 @@ import "./App.scss";
 import Dish from "./components/Dish";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Home from "./components/Home";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
         </Container>
       </main>
       <Footer />
+      <Home />
     </>
   );
 }
