@@ -1,24 +1,28 @@
+import { Navbar, Container, Nav } from "react-bootstrap";
 import "../assets/styles/header.scss";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Logo from "../assets/images/Logo.png";
+import logo from "../assets/images/logo.png";
 
-function Header() {
+function Header({ cartCount }) {
   return (
-    <Navbar className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="/">
-          <img alt="Logo App" src={Logo} />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-        <Navbar.Collapse className="justify-content-end">
-          <Nav>
-            <Nav.Link href="/">Accueil</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <header>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="/">
+            <img
+              src={logo}
+              alt="Un mexicain avec un chapeau qui joue de la guitare"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link href="/">Accueil</Nav.Link>
+              <Nav.Item>Panier ({cartCount})</Nav.Item>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </header>
   );
 }
 
