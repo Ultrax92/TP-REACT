@@ -34,7 +34,6 @@ function App() {
   ];
 
   const [showNewOnly, setShowNewOnly] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
 
   // Doit être en stock && showNewOnly soit false ou isNew soit true
   const filteredDishes = dishes.filter(
@@ -45,13 +44,9 @@ function App() {
     setShowNewOnly((prevState) => !prevState);
   }
 
-  function addToCart() {
-    setCartCount((prevState) => prevState + 1);
-  }
-
   return (
     <>
-      <Header cartCount={cartCount} />
+      <Header />
 
       <main>
         <Container>
@@ -71,7 +66,6 @@ function App() {
                     price={dish.price}
                     image={dish.image}
                     isNew={dish.isNew}
-                    handleAddToCart={addToCart}
                   />
                 </Col>
               );
