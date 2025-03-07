@@ -42,7 +42,6 @@ function App() {
     prevCartCountRef.current = cartCount;
   }, [cartCount]);
 
-  // Doit être en stock && showNewOnly soit false ou isNew soit true
   const filteredDishes = dishes.filter(
     (dish) => dish.stock > 0 && (!showNewOnly || dish.isNew)
   );
