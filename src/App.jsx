@@ -3,7 +3,8 @@ import "./App.scss";
 import Dish from "./components/Dish.jsx";
 import Footer from "./components/Footer.jsx";
 import Header from "./components/Header.jsx";
-import { useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { CartContext } from "./context/CartContext.jsx";
 
 function App() {
   const dishes = [
@@ -34,6 +35,12 @@ function App() {
   ];
 
   const [showNewOnly, setShowNewOnly] = useState(false);
+  const { cartCount } = useContext(CartContext);
+  const prevCartCountRef = useRef(cartCount);
+
+  useEffect(() => {
+    prevCartCountRef.current = cartCount;
+  }, [cartCount]);
 
   // Doit être en stock && showNewOnly soit false ou isNew soit true
   const filteredDishes = dishes.filter(
@@ -50,6 +57,10 @@ function App() {
 
       <main>
         <Container>
+          <p>
+            Le panier est passé de {prevCartCountRef.current} à {cartCount}{" "}
+            articles.
+          </p>
           <Button
             variant="primary"
             className="mb-2"

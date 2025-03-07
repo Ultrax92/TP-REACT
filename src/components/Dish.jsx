@@ -1,10 +1,10 @@
 import { Badge, Card, Button } from "react-bootstrap";
 import "../assets/styles/dish.scss";
-import { useContext } from "react";
-import { CartContext } from "./CartContext";
+import useCart from "../hooks/useCart.js";
 
 function Dish({ image, name, price, isNew }) {
-  const {addToCart} = useContext(CartContext);
+  const { increment, decrement } = useCart();
+
   return (
     <Card>
       {isNew && (
@@ -16,8 +16,11 @@ function Dish({ image, name, price, isNew }) {
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{price}€</Card.Text>
-        <Button variant="primary" onClick={addToCart}>
+        <Button variant="primary" onClick={increment}>
           Ajouter au panier
+        </Button>
+        <Button variant="danger" onClick={decrement}>
+          Retirer du panier
         </Button>
       </Card.Body>
     </Card>
