@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import "./App.css";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -19,26 +20,19 @@ function App() {
         {products.map((product) => (
           <Col key={product.id}>
             <Card className="h-100">
-              <div
-                style={{
-                  height: "200px",
-                  overflow: "hidden",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
+              <div className="card">
                 <Card.Img
                   variant="top"
                   src={product.image}
                   alt={product.title}
-                  style={{ maxHeight: "100%", width: "auto" }}
+                  className="cardImg"
                 />
               </div>
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
                 <Card.Text>
-                  {product.description.substring(0, 100)}... <br /><br />
+                  {product.description.substring(0, 100)}... <br />
+                  <br />
                   {product.price} €
                 </Card.Text>
               </Card.Body>

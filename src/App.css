@@ -1,0 +1,12 @@
+.card {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardImg {
+    max-height: 100%; 
+    width: auto;
+}
