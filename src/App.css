@@ -2,3 +2,8 @@
     height: 300px;
     object-fit: contain;
 }
+
+.btnProduct {
+    display: flex;
+    justify-content: end;
+}
