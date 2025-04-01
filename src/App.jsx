@@ -52,6 +52,28 @@ function App() {
     alert(`Le produit avec l'id ${data.id} a été modifié`);
   }
 
+  async function handlePatchProduct(id) {
+    const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ price: 5 }),
+    });
+
+    const data = await response.json();
+    alert(`Le prix du produit avec l'id ${data.id} a été modifié`);
+  }
+
+  async function handleDeleteProduct(id) {
+    const response = await fetch(`https://fakestoreapi.com/products/${id}`, {
+      method: "DELETE",
+    });
+
+    const data = await response.json();
+    alert(`Le produit avec l'id ${data.id} a été supprimé`);
+  }
+
   return (
     <Container className="my-4">
       <div className="btnProduct mb-3">
@@ -77,10 +99,23 @@ function App() {
                 <Card.Text>{product.price} €</Card.Text>
                 <Button
                   variant="warning"
-                  className="mt-auto"
+                  className="mt-auto mb-2"
                   onClick={() => handleUpdateProduct(product.id)}
                 >
                   Modifier le produit complet
+                </Button>
+                <Button
+                  variant="info"
+                  className="mb-2"
+                  onClick={() => handlePatchProduct(product.id)}
+                >
+                  Modifier le prix du produit
+                </Button>
+                <Button
+                  variant="danger"
+                  onClick={() => handleDeleteProduct(product.id)}
+                >
+                  Supprimer le produit
                 </Button>
               </Card.Body>
             </Card>
